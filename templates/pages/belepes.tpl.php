@@ -1,23 +1,39 @@
-    <form action = "belep" method = "post">
-      <fieldset>
-        <legend>Bejlentkezés</legend>
-        <br>
-        <input type="text" name="felhasznalo" placeholder="felhasználó" required><br><br>
-        <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
-        <input type="submit" name="belepes" value="Belépés">
-        <br>&nbsp;
-      </fieldset>
-    </form>
-    <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "regisztral" method = "post">
-      <fieldset>
-        <legend>Regisztráció</legend>
-        <br>
-        <input type="text" name="vezeteknev" placeholder="vezetéknév" required><br><br>
-        <input type="text" name="utonev" placeholder="utónév" required><br><br>
-        <input type="text" name="felhasznalo" placeholder="felhasználói név" required><br><br>
-        <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
-        <input type="submit" name="regisztracio" value="Regisztráció">
-        <br>&nbsp;
-      </fieldset>
-    </form>
+<h2>Belépés / Regisztráció</h2>
+
+<div class="ket-oszlop">
+    <section class="doboz">
+        <h3>Belépés</h3>
+
+        <form action="?belep" method="post">
+            <label>Felhasználónév</label>
+            <input type="text" name="felhasznalo" required>
+
+            <label>Jelszó</label>
+            <input type="password" name="jelszo" required>
+
+            <input class="btn" type="submit" value="Belépés">
+        </form>
+
+        <p class="muted">Teszt: teszt / teszt1234</p>
+    </section>
+
+    <section class="doboz">
+        <h3>Regisztráció</h3>
+
+        <form action="?regisztral" method="post">
+            <label>Vezetéknév</label>
+            <input type="text" name="vezeteknev" required>
+
+            <label>Utónév</label>
+            <input type="text" name="utonev" required>
+
+            <label>Felhasználónév</label>
+            <input type="text" name="felhasznalo" required>
+
+            <label>Jelszó</label>
+            <input type="password" name="jelszo" required>
+
+            <input class="btn" type="submit" value="Regisztráció">
+        </form>
+    </section>
+</div>
