@@ -276,25 +276,76 @@ h3 {
     color: var(--muted);
 }
 
-.video,
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-box video,
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    background: #000;
+    object-fit: cover;
+}
+.youtube-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+/* Google térkép külön */
 .map {
     width: 100%;
-    height: 320px;
+    height: 420px;
     border: 0;
     border-radius: 18px;
     background: #ddd;
     overflow: hidden;
 }
 
-.map {
-    height: 420px;
+/* Régi video class ne zavarjon be */
+.video {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
-video {
-    display: block;
+.video iframe,
+.video video,
+iframe.video,
+video.video {
     width: 100%;
+    height: 320px;
+    display: block;
+    border: 0;
+    border-radius: 18px;
+    background: #000;
+    object-fit: cover;
+}
+
+.map {
+    width: 100%;
+    height: 420px;
+    border: 0;
     border-radius: 18px;
     background: #ddd;
+    overflow: hidden;
 }
 
 label {
