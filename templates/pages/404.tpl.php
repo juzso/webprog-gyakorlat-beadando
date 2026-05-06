@@ -1,1 +1,1 @@
-<h2><?= $keres['szoveg'] ?></h2>
+<h2>404</h2><p>A keresett oldal nem található.</p>
