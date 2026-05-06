@@ -27,7 +27,7 @@ $oldalak = array(
 $hiba_oldal = array('fajl' => '404', 'szoveg' => 'A keresett oldal nem található!');
 
 function db_connect() {
-    $dbh = new PDO('mysql:host=localhost;dbname=', 'root', '', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+    $dbh = new PDO('mysql:host=127.0.0.1;dbname=mozi1', 'mozi1', 'valamsssi35888:ajidi', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
     $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
     return $dbh;
 }
