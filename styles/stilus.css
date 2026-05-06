@@ -1,6 +1,491 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #20110e;
+    --dark2: #321a15;
+    --brown: #6f351d;
+    --gold: #d8943f;
+    --cream: #fff6e9;
+    --paper: #fffaf2;
+    --muted: #826f61;
+    --line: #ecd8bf;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top left, #fff1d8 0, #f5eadc 32%, #efe0cf 100%);
+    color: #261812;
+    line-height: 1.6;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(32, 17, 14, .04) 1px, transparent 1px),
+        linear-gradient(rgba(32, 17, 14, .025) 1px, transparent 1px);
+    background-size: 42px 42px;
+    opacity: .45;
+    z-index: -1;
+}
+
 header {
-    border-radius: 10px;
-    background-color: yellow;
-    padding: 10px;
-    margin: 10px;
+    background: linear-gradient(135deg, var(--dark), var(--brown));
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px max(14px, calc((100vw - 1120px) / 2 + 14px));
+
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+header img {
+    width: 54px;
+    height: auto;
+    border-radius: 12px;
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .22);
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+header p {
+    margin: 2px 0 0;
+    color: #ffdca6;
+    font-size: .78rem;
+    line-height: 1.15;
+}
+
+.login-info {
+    display: inline-block;
+    margin-top: 4px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .24);
+    padding: 4px 9px;
+    border-radius: 999px;
+    color: #ffe4bd;
+    font-size: .78rem;
+}
+
+.login-info strong {
+    color: #fff;
+}
+
+.topnav {
+    background: #27130f;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .10);
+    margin: 0;
+    padding: 0;
+}
+
+.topnav ul {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 7px 14px;
+    list-style: none;
+
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.topnav li {
+    margin: 0;
+}
+
+.topnav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, .10);
+
+    padding: 7px 13px;
+    font-size: 14px;
+    line-height: 1.05;
+
+    border-radius: 999px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    white-space: nowrap;
+    transition: .18s;
+}
+
+.topnav li.active a,
+.topnav a:hover {
+    background: var(--gold);
+    color: #21100d;
+    transform: translateY(-1px);
+}
+
+#content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 16px 58px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#content > *:first-child {
+    margin-top: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1.45fr .75fr;
+    gap: 22px;
+    align-items: center;
+
+    background: linear-gradient(135deg, #2a130f 0%, #77351d 50%, #c1702b 100%);
+    color: #fff;
+
+    border-radius: 0 0 28px 28px;
+    padding: 48px;
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    box-shadow: 0 16px 38px rgba(45, 24, 16, .20);
+    border: 1px solid rgba(255, 255, 255, .18);
+}
+
+.hero:after {
+    content: "MOZI";
+    position: absolute;
+    right: -20px;
+    bottom: -48px;
+
+    font-size: 9rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+
+    color: rgba(255, 255, 255, .08);
+}
+
+.hero h1,
+.hero h2 {
+    font-size: clamp(2.1rem, 4vw, 4.3rem);
+    line-height: 1.02;
+    margin: .08em 0;
+    color: #fff;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, .28);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #ffe6cc;
+    max-width: 700px;
+}
+
+.hero .btn {
+    margin-top: 10px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: #ffd18a;
+}
+
+.btn,
+input[type=submit],
+button {
+    display: inline-block;
+    background: linear-gradient(135deg, #d8943f, #b55c22);
+    color: #fff;
+    border: 0;
+    border-radius: 14px;
+
+    padding: 12px 18px;
+    margin-top: 12px;
+
+    text-decoration: none;
+    font-weight: 800;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(143, 70, 27, .22);
+}
+
+.btn:hover,
+input[type=submit]:hover,
+button:hover {
+    background: linear-gradient(135deg, #b55c22, #7e3716);
+}
+
+.masodlagos {
+    background: #756b63;
+}
+
+.ket-oszlop {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.doboz,
+article,
+section:not(.hero) {
+    background: var(--paper);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 13px 32px rgba(45, 24, 16, .10);
+    border: 1px solid var(--line);
+    margin: 0 0 22px;
+}
+
+.doboz {
+    margin: 12px 0;
+}
+
+h2,
+h3 {
+    color: #3d1b18;
+    margin-top: 0;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.video,
+.map {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    border-radius: 18px;
+    background: #ddd;
+    overflow: hidden;
+}
+
+.map {
+    height: 420px;
+}
+
+video {
+    display: block;
+    width: 100%;
+    border-radius: 18px;
+    background: #ddd;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 800;
+    color: #3d1b18;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid #d7cbbd;
+    border-radius: 14px;
+    padding: 12px;
+    font: inherit;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form.doboz {
+    background: #fff;
+}
+
+.hiba {
+    background: #ffe8e8;
+    color: #8b1717;
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin: 0 0 18px;
+}
+
+.siker {
+    background: #e6f7ea;
+    color: #14622a;
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin: 0 0 18px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.galeria figure {
+    margin: 0;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
+    border: 1px solid var(--line);
+    padding: 0;
+}
+
+.galeria img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #eee;
+    border-radius: 0;
+}
+
+.galeria figcaption {
+    padding: 12px;
+    color: var(--muted);
+}
+
+.table-wrap {
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(45, 24, 16, .08);
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f1d8b7;
+    color: #321a15;
+}
+
+td a {
+    color: #874313;
+    font-weight: 800;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.actions a {
+    color: #874313;
+    font-weight: 800;
+}
+
+.actions .danger {
+    color: #b00020;
+}
+
+footer {
+    background: var(--dark);
+    color: #e9d3bd;
+    padding: 26px 0;
+    text-align: center;
+    margin-top: 26px;
+    border-top: 4px solid var(--gold);
+}
+
+@media (max-width: 760px) {
+
+    header {
+        display: block;
+        text-align: center;
+        padding: 8px 12px;
+    }
+
+    header img {
+        width: 48px;
+    }
+
+    header p {
+        font-size: .85rem;
+    }
+
+    .topnav {
+        position: static;
+    }
+
+    .topnav ul {
+        padding: 7px 8px;
+        gap: 6px;
+    }
+
+    .topnav a {
+        font-size: 13px;
+        padding: 7px 10px;
+        text-align: center;
+    }
+
+    #content {
+        padding: 0 10px 42px;
+    }
+
+    .hero,
+    .ket-oszlop {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 26px;
+    }
+
+    .hero:after {
+        font-size: 5rem;
+    }
+
+    .video,
+    .map {
+        height: 240px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
