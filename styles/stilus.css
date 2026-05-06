@@ -15,11 +15,15 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
 }
 
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     background: radial-gradient(circle at top left, #fff1d8 0, #f5eadc 32%, #efe0cf 100%);
     color: #261812;
@@ -46,11 +50,10 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-
     padding: 8px max(14px, calc((100vw - 1120px) / 2 + 14px));
-
     border-bottom: 0;
     box-shadow: none;
+    flex-shrink: 0;
 }
 
 header img {
@@ -100,6 +103,7 @@ header p {
     box-shadow: 0 8px 18px rgba(0, 0, 0, .10);
     margin: 0;
     padding: 0;
+    flex-shrink: 0;
 }
 
 .topnav ul {
@@ -107,7 +111,6 @@ header p {
     margin: 0 auto;
     padding: 7px 14px;
     list-style: none;
-
     display: flex;
     gap: 7px;
     flex-wrap: wrap;
@@ -123,15 +126,12 @@ header p {
     color: #fff;
     text-decoration: none;
     background: rgba(255, 255, 255, .10);
-
     padding: 7px 13px;
     font-size: 14px;
     line-height: 1.05;
-
     border-radius: 999px;
     font-weight: 800;
     border: 1px solid rgba(255, 255, 255, .12);
-
     white-space: nowrap;
     transition: .18s;
 }
@@ -145,11 +145,13 @@ header p {
 
 #content {
     max-width: 1120px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 16px 58px;
     background: transparent;
     box-shadow: none;
     border-radius: 0;
+    flex: 1 0 auto;
 }
 
 #content > *:first-child {
@@ -159,20 +161,16 @@ header p {
 .hero {
     position: relative;
     overflow: hidden;
-
     display: grid;
     grid-template-columns: 1.45fr .75fr;
     gap: 22px;
     align-items: center;
-
     background: linear-gradient(135deg, #2a130f 0%, #77351d 50%, #c1702b 100%);
     color: #fff;
-
     border-radius: 0 0 28px 28px;
     padding: 48px;
     margin-top: 0;
     margin-bottom: 24px;
-
     box-shadow: 0 16px 38px rgba(45, 24, 16, .20);
     border: 1px solid rgba(255, 255, 255, .18);
 }
@@ -182,11 +180,9 @@ header p {
     position: absolute;
     right: -20px;
     bottom: -48px;
-
     font-size: 9rem;
     font-weight: 900;
     letter-spacing: .08em;
-
     color: rgba(255, 255, 255, .08);
 }
 
@@ -223,14 +219,11 @@ button {
     color: #fff;
     border: 0;
     border-radius: 14px;
-
     padding: 12px 18px;
     margin-top: 12px;
-
     text-decoration: none;
     font-weight: 800;
     cursor: pointer;
-
     box-shadow: 0 8px 20px rgba(143, 70, 27, .22);
 }
 
@@ -294,6 +287,7 @@ h3 {
     background: #000;
     object-fit: cover;
 }
+
 .youtube-box {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -309,7 +303,6 @@ h3 {
     border: 0;
 }
 
-/* Google térkép külön */
 .map {
     width: 100%;
     height: 420px;
@@ -319,33 +312,10 @@ h3 {
     overflow: hidden;
 }
 
-/* Régi video class ne zavarjon be */
 .video {
     width: 100%;
     height: 100%;
     display: block;
-}
-
-.video iframe,
-.video video,
-iframe.video,
-video.video {
-    width: 100%;
-    height: 320px;
-    display: block;
-    border: 0;
-    border-radius: 18px;
-    background: #000;
-    object-fit: cover;
-}
-
-.map {
-    width: 100%;
-    height: 420px;
-    border: 0;
-    border-radius: 18px;
-    background: #ddd;
-    overflow: hidden;
 }
 
 label {
@@ -478,12 +448,12 @@ footer {
     color: #e9d3bd;
     padding: 26px 0;
     text-align: center;
-    margin-top: 26px;
+    margin-top: auto;
     border-top: 4px solid var(--gold);
+    flex-shrink: 0;
 }
 
 @media (max-width: 760px) {
-
     header {
         display: block;
         text-align: center;
@@ -530,7 +500,11 @@ footer {
         font-size: 5rem;
     }
 
-    .video,
+    .video-box,
+    .youtube-box {
+        aspect-ratio: 16 / 9;
+    }
+
     .map {
         height: 240px;
     }
