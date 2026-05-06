@@ -9,7 +9,7 @@ $fejlec = array(
     'motto' => 'Magyar filmek és mozik adatbázisa.'
     );
 $lablec = array(
-    'copyright' => 'Copyright Ács András & Csányi Kristóf ',
+    'copyright' => 'Copyright Ács András(DT5E4P) & Csányi Kristóf(EI546K) ',
     'ceg' => ''
     );
 
